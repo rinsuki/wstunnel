@@ -11,7 +11,7 @@ TCP over WebSocket
  ||
  || <= WebSocket
  ||
-[you can include some reverse-proxy or other]
+[you can add some reverse-proxy or other to here]
  ||
  || <= WebSocket
  ||
