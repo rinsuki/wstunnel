@@ -18,6 +18,7 @@ type Server struct {
 }
 
 func (s *Server) handler(w http.ResponseWriter, r *http.Request) {
+	log.Println("Incoming --> ", r.RemoteAddr, r.Header)
 	conn, err := upgrader.Upgrade(w, r, nil)
 	if err != nil {
 		log.Println(err)
@@ -40,7 +41,6 @@ func (s *Server) handler(w http.ResponseWriter, r *http.Request) {
 				tcp.Close()
 				break
 			}
-			log.Printf("S→C %d", len)
 			conn.WriteMessage(websocket.BinaryMessage, buf[0:len])
 		}
 	}()
@@ -55,7 +55,6 @@ func (s *Server) handler(w http.ResponseWriter, r *http.Request) {
 		if msgType != websocket.BinaryMessage {
 			log.Println("unknown msgType")
 		}
-		log.Printf("C→S %d", len(buf))
 		tcp.Write(buf)
 	}
 }
