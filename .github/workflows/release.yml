@@ -29,5 +29,5 @@ jobs:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
         file: binaries/*
         tag: ${{ github.ref }}
-        file_glob: true
+        file_glob: "true"
         
