@@ -17,7 +17,6 @@ on:
         - uses: actions/checkout@v2
         - run: PATH=$HOME/go/bin:$PATH ./crossbuild.sh
         - uses: actions/create-release@v1
-          id: create_release
           env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           with:
