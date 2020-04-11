@@ -17,6 +17,8 @@ jobs:
     - run: go get github.com/mitchellh/gox
     - uses: actions/checkout@v2
     - run: ./crossbuild.sh
+      env:
+        PATH: /opt/hostedtoolcache/go/1.13.10/x64/bin
     - uses: actions/upload-artifact@v1
       with:
         name: binaries
