@@ -22,7 +22,7 @@ jobs:
         tag_name: ${{ github.ref }}
         release_name: Release ${{ steps.get_version.outputs.VERSION }}
         draft: true
-    - uses: svenstaro/upload-release-asset@1.0.1
+    - uses: svenstaro/upload-release-action@1.0.1
       with:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
         file: binaries/*
