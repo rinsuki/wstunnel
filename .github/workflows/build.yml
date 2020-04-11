@@ -9,6 +9,7 @@ on:
 jobs:
   build:
     name: Build
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/setup-go@v1
       with:
